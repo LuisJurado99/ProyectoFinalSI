@@ -6,3 +6,8 @@ body {
 a {
   color: #000000;
 }
+
+.imgcentre{
+  margin: auto;
+  display: block;
+}
