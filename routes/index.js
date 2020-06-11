@@ -1,7 +1,6 @@
 var express = require('express');
 var router = express.Router();
 
-<<<<<<< HEAD
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', });
@@ -75,18 +74,4 @@ function nuevosPerfumes() {
   });
 }
 
-
-  
-
-function main() {
- 
-}
-
-main();   
-=======
-/* GET home page. */	
-router.get('/', function(req, res, next) {	
-    res.render('index', { title: 'Express', });	
-  });
->>>>>>> 42fdd14dbd091a7fa431add5750d4285e90590a6
 module.exports = router;
