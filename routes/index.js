@@ -29,7 +29,6 @@ function nuevosPerfumes() {
 
 
   var perfumes=[
-    
 
 {Nombre:"Vibrant Hero", Marca: "Toilette", Aroma: "Aromática", Precio: "$350", Perfume_para: "Caballero", Cantidad:"100ml"},
 
