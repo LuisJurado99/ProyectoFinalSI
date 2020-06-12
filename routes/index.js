@@ -9,6 +9,7 @@ var Perfume = require('../models/Perfume');
   res.render('index', { title: 'Express', });
 });
 */
+
 router.post('/',(req,res,next)=>{
   var perfume=Perfume({
     nombre: req.body.nombre,
@@ -26,11 +27,10 @@ router.post('/',(req,res,next)=>{
   });
 
 });
-
 router.get('/',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.render('index',{title: "express"});
+    else res.status(200).json(datos);
   });
 });
 
