@@ -20,14 +20,19 @@ router.post('/',(req,res,next)=>{
   });
 
   perfume.save((err,datos)=>{
-    if(err) res.status(404).json({mensaje:"Error al guardar"});
+    if(err) res.render('error',{message: err, });
     else res.status(201).json(datos);
   });
 
 });
 
-
-
+router.get('/',(req,res,next)=>{
+  Auto.find( {} , (err,datos)=>{
+    if(err) res.status(400).json({mensaje:"Error de Api"})
+    else res.status(200).json(datos);
+  });
+});
+/*
 
 function nuevoPerfume(){
 
@@ -98,5 +103,5 @@ function nuevosPerfumes() {
     }
   });
 }
-
+*/
 module.exports = router;
