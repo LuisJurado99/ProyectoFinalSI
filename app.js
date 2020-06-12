@@ -10,10 +10,10 @@ var usersRouter = require('./routes/users');
 var app = express();
 var mongoose = require('mongoose');
 var urlLuis = 'mongodb+srv://root:root@cluster0-qksmw.gcp.mongodb.net/Perfumes?retryWrites=true&w=majority';
-var urlLucero = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true';
+var urlLucero = 'mongodb+srv://LuceroCortes:Marian200213@cluster0-guf3h.mongodb.net/TestPerfumes?retryWrites=true&w=majority';
 var urlCesar = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true' ;
 
-mongoose.connect(urlLuis, {
+mongoose.connect(urlLucero, {
     useNewUrlParser: true
   }).then(() => {
     console.log('Conectado a Mongo DB Atlas')
