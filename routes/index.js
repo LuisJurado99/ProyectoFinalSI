@@ -28,9 +28,9 @@ router.post('/',(req,res,next)=>{
 });
 
 router.get('/',(req,res,next)=>{
-  Auto.find( {} , (err,datos)=>{
+  Perfume.find( {} , (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.status(200).json(datos);
+    else res.render('index',{title: "express"});
   });
 });
 /*
