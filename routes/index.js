@@ -5,10 +5,14 @@ var Perfume = require('../models/Perfume');
 
 
 /* GET home page. */
-/*router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express', });
+router.get('/', function(req, res, next) {
+  Perfume.find( {} , (err,datos)=>{
+    if(err) res.status(400).json({mensaje:"Error de Api"})
+    else res.render('index',{datos: datos})
+  });
+  
 });
-*/
+
 
 router.post('/',(req,res,next)=>{
   var perfume=Perfume({
@@ -26,14 +30,17 @@ router.post('/',(req,res,next)=>{
   });
 
 });
-
-router.get('/',(req,res,next)=>{
+router.get('/alta',(req,res,next)=>{
+    if(err) res.status(400).json({mensaje:"Error de Api"})
+    else res.render('alta',{title: 'alta'});
+  });
+/*router.get('/',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
     else res.status(201).json(datos)
   });
 });
-
+*/
 router.delete('/',(req,res,next)=>{
   res.status(405).json({mensaje:'Acción no permitida'})
 });
