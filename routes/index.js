@@ -32,7 +32,7 @@ router.post('/',(req,res,next)=>{
 });
 router.get('/alta',(req,res,next)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.render('alta',{title: 'alta'});
+    else res.render('alta',{})
   });
 /*router.get('/',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
