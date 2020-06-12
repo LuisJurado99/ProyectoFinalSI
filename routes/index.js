@@ -5,10 +5,10 @@ var Perfume = require('../models/Perfume');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+/*router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', });
 });
-
+*/
 router.post('/',(req,res,next)=>{
   var perfume=Perfume({
     nombre: req.body.nombre,
