@@ -9,11 +9,11 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 var mongoose = require('mongoose');
-
+var urlLuis = 'mongodb+srv://root:root@cluster0-qksmw.gcp.mongodb.net/Perfumes?retryWrites=true&w=majority';
 var urlLucero = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true';
 var urlCesar = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true' ;
 
-mongoose.connect(urlCesar, {
+mongoose.connect(urlLuis, {
     useNewUrlParser: true
   }).then(() => {
     console.log('Conectado a Mongo DB Atlas')
