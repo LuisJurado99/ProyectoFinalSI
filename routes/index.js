@@ -1,10 +1,34 @@
 var express = require('express');
 var router = express.Router();
+var mongoose = require('mongoose');
+var Perfume = require('../models/Perfume');
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', });
 });
+
+router.post('/',(req,res,next)=>{
+  var perfume=Perfume({
+    marca: req.body.marca,
+    aroma: req.body.aroma,
+    cantidad: req.body.cantidad,
+    precio: req.body.precio,
+    tipo: req.body.tipo,
+    foto: req.body.foto
+  });
+
+  perfume.save((err,datos)=>{
+    if(err) res.status(404).json({mensaje:"Error al guardar"});
+    else res.status(201).json(datos);
+  });
+
+});
+
+
+
+
 function nuevoPerfume(){
 
   var perfume= Perfume({
@@ -24,6 +48,8 @@ function nuevoPerfume(){
     }
   });
 }
+
+
 
 function nuevosPerfumes() {
 
