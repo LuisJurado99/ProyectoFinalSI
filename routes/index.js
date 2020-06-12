@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/',(req,res,next)=>{
   var perfume=Perfume({
-    nombre: req.body,nombre,
+    nombre: req.body.nombre,
     marca: req.body.marca,
     aroma: req.body.aroma,
     cantidad: req.body.cantidad,
