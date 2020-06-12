@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 
 router.post('/',(req,res,next)=>{
   var perfume=Perfume({
+    nombre: req.body,nombre,
     marca: req.body.marca,
     aroma: req.body.aroma,
     cantidad: req.body.cantidad,
@@ -64,8 +65,6 @@ function nuevosPerfumes() {
 {Nombre:"Boss Bottled (Set de dos piezas)", Marca: "BOSS", Aroma: "Madera sándalo", Precio: "$1,199", Perfume_para: "Caballero", Cantidad:"100ml"},
 
 {Nombre:"Eternity", Marca: "Calvin Klein", Aroma: "Frutado", Precio: "$1,100", Perfume_para: "Caballero", Cantidad:"100ml"},
-
-
 
 {Nombre:"Ralph Lauren", Marca: "Polo", Aroma: "Floral-Frutal", Precio: "$2,100", Perfume_para: "Dama", Cantidad:"100ml"},
 
