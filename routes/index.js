@@ -18,11 +18,10 @@ router.post('/',(req,res,next)=>{
     cantidad: req.body.cantidad,
     precio: req.body.precio,
     tipo: req.body.tipo,
-    foto: req.body.foto
   });
 
   perfume.save((err,datos)=>{
-    if(err) res.render('error',{message: err, });
+    if(err) res.render('error',{message: err});
     else res.status(201).json(datos);
   });
 
@@ -30,7 +29,7 @@ router.post('/',(req,res,next)=>{
 router.get('/',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.status(200).json(datos);
+    else res.render('index',{datos: datos});
   });
 });
 
