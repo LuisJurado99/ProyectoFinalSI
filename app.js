@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var app = express();
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://user12:wO6xHWSDTOnmjhmA@cluster0-qksmw.gcp.mongodb.net/perfume?retryWrites=true&w=majority', {
+mongoose.connect('mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true', {
     useNewUrlParser: true
   }).then(() => {
     console.log('Conectado a Mongo DB Atlas')
