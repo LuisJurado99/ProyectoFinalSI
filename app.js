@@ -9,8 +9,7 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 var mongoose = require('mongoose');
-var urlLuis = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true';
-var urlLucero = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true';
+
 var urlCesar = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true' ;
 
 mongoose.connect(urlLuis, {
