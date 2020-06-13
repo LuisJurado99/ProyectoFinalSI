@@ -3,12 +3,14 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var Perfume = require('../models/Perfume');
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   Perfume.find( {} , (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
     else res.render('index',{datos: datos, title: "Perfumes"})
   });
+  
 });
 
 router.get('/apiPerfume',(req,res,next)=>{
@@ -16,6 +18,9 @@ router.get('/apiPerfume',(req,res,next)=>{
     res.status(200).json(datos);
   });
 });
+
+
+
 router.post('/',(req,res,next)=>{
   var perfume=Perfume({
     nombre: req.body.nombre,
@@ -37,22 +42,7 @@ router.post('/',(req,res,next)=>{
 router.get('/informar',(req,res,next)=>{
   res.render('alta',{title: "Information"})
 });
-router.get('/alta', function(req, res, next) {
-  res.render('alta_perfume', { title: 'Express' });
-});
-router.post('/grabar',(req,res,next)=>{
-  var perfume=Perfume({
-    nombre: req.body.nombre,
-    marca: req.body.marca,
-    aroma: req.body.aroma,
-    cantidad: req.body.cantidad,
-    precio: req.body.precio,
-    tipo: req.body.tipo,
-  });
-  perfume.save((err,datos)=>{
-    if(err) res.render('error',{message: err});
-    else res.status(201).json(datos);
-  });
+
 
 router.get('/documentar',(req,res,next)=>{
   res.render('documentacion',{title: "Documentation"})
@@ -95,6 +85,7 @@ router.get('/:perfumeId',(req,res,next)=>{
       console.log(datos);
       res.render('buscar',{datos:datos});
     }
-  })
+  });
+  
 });
 module.exports = router;
