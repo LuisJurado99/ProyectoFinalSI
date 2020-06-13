@@ -55,8 +55,12 @@ router.delete('/',(req,res,next)=>{
 
 router.delete('/',(req,res,next)=>{
   Perfume.findOneAndDelete({'_id':req.params.perfumeId},(err,datos)=>{
-    if(err) res.status(404).json(err);
-    else  res.status(200).json(datos);
+    if(err) {
+      res.status(404).json(err);
+    }
+    else  {
+      res.status(200).json(datos);
+    }
   });
 });
 
