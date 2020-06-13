@@ -30,7 +30,8 @@ router.post('/',(req,res,next)=>{
     precio: req.body.precio,
     tipo: req.body.tipo,
   });
-
+  console.log(req.body);
+  
   perfume.save((err,datos)=>{
     if(err) res.render('error',{message: err});
     else res.status(201).json(datos);
@@ -44,7 +45,7 @@ router.get('/informar',(req,res,next)=>{
 
 
 router.get('/documentar',(req,res,next)=>{
-  res.render('documentacion',{title: Documentation})
+  res.render('documentacion',{title: "Documentation"})
 });
 
 
@@ -59,6 +60,14 @@ router.delete('/',(req,res,next)=>{
   });
 });
 
+router.post('/buscar',(req,res,next)=>{
+  console.log(req.body);
+  
+  Perfume.findOne({'marca':req.params.search},(err,datos)=>{
+    if(err) res.status(404).json(err);
+    else  res.status(200).json(datos);
+  });
+});
 module.exports = router;
 /*
 

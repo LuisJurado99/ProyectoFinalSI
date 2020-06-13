@@ -14,16 +14,13 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="/informar">Acerca de</a>
-
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/documentar">Documentación</a>
-            
-          </li>
-          
+          </li>  
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0" action="/buscar" method="POST">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="buscar">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
@@ -31,36 +28,5 @@
   </head>
   <body>
     {{{body}}}
-    <div style="border:1px solid sienna; ">
-    <div class="row row-cols-1 row-cols-md-3">
-      <div class="col mb-4">
-        <div class="card">
-          <img style="width: 150px;" src="http://localhost:3000/../images/participantes/Cesar.jpg" class="card-img-top imgcentre">
-          <div class="card-body">
-            <h5 class="card-title">Cesar</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card">
-          <img style="width: 150px;" src="http://localhost:3000/../images/participantes/Lucero.jpg" class="card-img-top imgcentre">
-          <div class="card-body">
-            <h5 class="card-title">Lucero</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col mb-4">
-        <div class="card">
-          <img style="width: 150px;" src="http://localhost:3000/../images/participantes/Lucero.jpg" class="card-img-top imgcentre">
-          <div class="card-body">
-            <h5 class="card-title">Lucero</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
   </body>
 </html>
