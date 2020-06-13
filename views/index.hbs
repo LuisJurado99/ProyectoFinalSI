@@ -1,17 +1,18 @@
 <div class="row">
-{{#each datos }}
+    {{#each datos }}
     <div class="col col-3 m-5">
         <div class="card" style="width:400px;">
             <div style="text-align: center;">
                 <img class="card-img-top" src="{{foto}}" alt="Card image" style="width: 350px; height: 400px;">
-                    <div class="card-body">
-                        <h4 class="card-title"  ><a href="{{foto}}">{{nombre}} </a> </h4>
-                        <p class="card-text">{{marca}}</p>
-                        <a href="/" data-confirm="¿Total y completamente seguro de eliminar?">
-                        
-                    </div>
+                <div class="card-body">
+                    <h4 class="card-title"><a href="{{foto}}">{{nombre}} </a> </h4>
+                    <p class="card-text">{{marca}}</p>
+                    <p class="card-text">$ {{precio}}</p>
+                    <p class="card-text">{{tipo}}</p>
+                    <p class="card-text">{{cantidad}} ml </p>
+                </div>
             </div>
         </div>
     </div>
-{{/each}}
+    {{/each}}
 </div>
