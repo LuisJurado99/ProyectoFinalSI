@@ -10,14 +10,13 @@ var usersRouter = require('./routes/users');
 var app = express();
 var mongoose = require('mongoose');
 
-const uri = "mongodb+srv://root:root@cluster0-qksmw.gcp.mongodb.net/perfume?retryWrites=true";
-var urlCesar = 'mongodb+srv://usuario1:MpRQOYlVVjB7ESUL@cluster0-tpntb.mongodb.net/perfume?retryWrites=true' ;
-
+var uri = 'mongodb+srv://root:root@cluster0-qksmw.gcp.mongodb.net/perfume?retryWrites=true&w=majority';
 mongoose.connect(uri, {
-    useNewUrlParser: true
-  }).then(() => {
-    console.log('Conectado a Mongo DB Atlas')
-  }).catch(err => console.log(err));
+  useNewUrlParser: true
+}).then(() => {
+  console.log('Conectado a Mongo DB Atlas')
+}).catch(err => console.log(err));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
