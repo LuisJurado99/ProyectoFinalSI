@@ -40,12 +40,12 @@ router.post('/',(req,res,next)=>{
 
 
 router.get('/documentar',(req,res,next)=>{
-  res.render('documentacion',{})
+  res.render('documentacion',{title: Documentation})
 });
 
 router.get('/alta',(req,res,next)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.render('alta',{})
+    else res.render('alta',{title: "Altas"})
   });
 /*router.get('/',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
