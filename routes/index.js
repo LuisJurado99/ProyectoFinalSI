@@ -61,11 +61,27 @@ router.delete('/',(req,res,next)=>{
 });
 
 router.post('/buscar',(req,res,next)=>{
-  console.log(req.body);
   
-  Perfume.findOne({'marca':req.params.search},(err,datos)=>{
-    if(err) res.status(404).json(err);
-    else  res.status(200).json(datos);
+  Perfume.findOne({'nombre':req.body.buscar},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    } 
+    else  {
+      console.log(datos);
+      res.render('buscar',{title:'buscar',datos:datos});
+    }
   });
+});
+router.get('/:perfumeId',(req,res,next)=>{
+  Perfume.findOne({'_id': req.params.perfumeId},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    } 
+    else  {
+      console.log(datos);
+      res.render('buscar',{datos:datos});
+    }
+  });
+  
 });
 module.exports = router;
