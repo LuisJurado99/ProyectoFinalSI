@@ -8,7 +8,7 @@ var Perfume = require('../models/Perfume');
 router.get('/', function(req, res, next) {
   Perfume.find( {} , (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.render('index',{datos: datos})
+    else res.render('index',{datos: datos, title: "Perfumes"})
   });
   
 });
@@ -37,6 +37,7 @@ router.post('/',(req,res,next)=>{
   });
 
 });
+
 
 router.get('/documentar',(req,res,next)=>{
   res.render('documentacion',{})
