@@ -16,8 +16,8 @@ a {
 
 footer {
   background: #16222A;
-  background: -webkit-linear-gradient(59deg, #3A6073, #16222A);
-  background: linear-gradient(59deg, #3A6073, #16222A);
+  background: -webkit-linear-gradient(59deg, #a355b3, #ffe4c4);
+  background: linear-gradient(59deg, #a355b3, #ffe4c4);
   color: white;
   margin-top:100px;
 }
