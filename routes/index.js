@@ -19,7 +19,11 @@ router.get('/apiPerfume',(req,res,next)=>{
   });
 });
 
-
+router.patch('', (req,res,next)=>{
+  Perfume.findByIdAndUpdate( {} , (err,datos)=>{
+    res.status(200).json(datos);
+  });
+});
 
 router.post('/',(req,res,next)=>{
   var perfume=Perfume({
