@@ -98,6 +98,5 @@ router.get('/:perfumeId',(req,res,next)=>{
       res.render('buscar',{datos:datos});
     }
   });
-  
 });
 module.exports = router;
