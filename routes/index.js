@@ -48,7 +48,7 @@ router.post('/agregar',(req,res,next)=>{
 });
 
 router.get('/informar',(req,res,next)=>{
-  res.render('alta',{title: "Information"})
+  res.render('acercade',{title: "Information"})
 });
 
 
