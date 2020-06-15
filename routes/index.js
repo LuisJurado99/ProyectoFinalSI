@@ -20,9 +20,9 @@ router.get('/apiPerfume',(req,res,next)=>{
 });
 
 router.patch('/:perfumeId', (req,res,next)=>{
-  Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },res.body, (err,datos)=>{
+  Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:res.body}, (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.status(200).json(datos);
+    else res.status(200).json(datos)
   });
 });
 
@@ -77,7 +77,11 @@ router.post('/buscar',(req,res,next)=>{
     } 
     else  {
       console.log(datos);
-      res.render('buscar',{title:'buscar',datos:datos});
+      if (datos==null){
+        res.status(200).json(datos);
+      }else{
+        res.render('buscar',{title:'buscar',datos:datos});
+      }
     }
   });
 });
