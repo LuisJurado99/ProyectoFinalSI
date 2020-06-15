@@ -29,7 +29,7 @@ router.patch('/actualizar/:perfumeId', (req,res,next)=>{
   });
 });
 
-router.post('/',(req,res,next)=>{
+router.post('/agregar',(req,res,next)=>{
   var perfume=Perfume({
     nombre: req.body.nombre,
     marca: req.body.marca,
