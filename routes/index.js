@@ -19,9 +19,10 @@ router.get('/apiPerfume',(req,res,next)=>{
   });
 });
 
-router.patch('', (req,res,next)=>{
-  Perfume.findByIdAndUpdate( {} , (err,datos)=>{
-    res.status(200).json(datos);
+router.patch('/:perfumeId', (req,res,next)=>{
+  Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },res.body, (err,datos)=>{
+    if(err) res.status(400).json({mensaje:"Error de Api"})
+    else res.status(200).json(datos);
   });
 });
 
