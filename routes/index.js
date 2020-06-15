@@ -19,8 +19,11 @@ router.get('/apiPerfume',(req,res,next)=>{
   });
 });
 
-router.patch('/:perfumeId', (req,res,next)=>{
-  Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:res.body}, (err,datos)=>{
+router.patch('/actualizar/:perfumeId', (req,res,next)=>{
+  console.log(req.body);
+  console.log(req.params.perfumeId);
+  
+  Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
     else res.status(200).json(datos)
   });
@@ -58,7 +61,7 @@ router.delete('/',(req,res,next)=>{
   res.status(405).json({mensaje:'Acción no permitida'})
 });
 
-router.delete('/',(req,res,next)=>{
+router.delete('/borrar/:perfumeId',(req,res,next)=>{
   Perfume.findOneAndDelete({'_id':req.params.perfumeId},(err,datos)=>{
     if(err) {
       res.status(404).json(err);
