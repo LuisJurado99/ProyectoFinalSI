@@ -77,7 +77,7 @@ router.post('/buscar',(req,res,next)=>{
   Perfume.findOne({'nombre':req.body.buscar},(err,datos)=>{
     if(err){
       res.render('error',{title:'error'});
-    } 
+    }
     else  {
       console.log(datos);
       if (datos==null){
