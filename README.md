@@ -2,6 +2,13 @@ Proyecto Final Sistemas de Información
 ===
 
 ## Integrantes
-- [Cesar Fonseca](https://github.com/cfonseca2) 
+- [Fonseca César](https://github.com/cfonseca2) 
 - [Jurado Luis](https://github.com/LuisJurado99/)
-- [Mendoza Lucero](https://github.com/LuceroCortes)
+- [Leyva Lucero](https://github.com/LuceroCortes)
+### Se tienen tres ramas
+ - Heroku 
+    - Servirá para subir al servidor.
+ - test
+    - Ayudará a hacer pruebas internas.
+ - Luis
+    - Servirá para modificaciones personales.
