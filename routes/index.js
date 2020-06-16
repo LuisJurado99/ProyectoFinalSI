@@ -32,15 +32,7 @@ router.post('/modificar/:perfumeId', (req,res,next)=>{
       else res.status(200).json(datos)
     });
   });
-  
-router.patch('/actualizar/:perfumeId', (req,res,next)=>{
-console.log(req.body);
 
-  /*Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
-    if(err) res.status(400).json({mensaje:"Error de Api"})
-    else res.status(200).json(datos)
-  });*/
-});
 router.post('/agregar',(req,res,next)=>{
   var perfume=Perfume({
     nombre: req.body.nombre,
@@ -69,9 +61,6 @@ router.get('/insertar',(req,res,next)=>{
   res.render('alta',{title: "Insertar nuevo"})
 });
 
-router.get('/eliminar/:id',(req,res,next)=>{
-  res.render('eliminacion',{title: "Eliminar", id:req.params.id})
-});
 
 router.get('/modificar',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
@@ -101,27 +90,29 @@ router.delete('/borrar/:perfumeId',(req,res,next)=>{
     }
   });
 });
-router.delete('/borrar',(req,res,next)=>{
-  Perfume.findOneAndDelete({'name':req.body.name},(err,datos)=>{
-    if(err) {
-      res.status(404).json(err);
-    }
-    else  {
-      res.status(200).json(datos);
-    }
-  });
-});
-router.get('/eliminar',(req,res,next)=>{
-  Perfume.findOne({'nombre':req.body.eliminar},(err,datos)=>{
+/*
+router.post('/eliminar/:id',(req,res,next)=>{
+  Perfume.findOneAndDelete({'_id':req.params.id},(err,datos)=>{
     if(err){
       res.render('error',{title:'error'});
     }
     else{
       console.log(datos);
-      res.render('buscar',{title:'buscar',datos:datos});
+      res.status(200).json(datos);
     }
   });    
-      
+});*/
+//PRUEBA!!!!!!!!!
+router.get('/eliminar/:id',(req,res,next)=>{
+  Perfume.findOneAndDelete({'_id':req.params.id},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    }
+    else{
+      console.log(datos);
+      res.render('buscar',{id:req.params.id, datos:datos})
+    }
+  }); 
 });
 router.get('/modificar/:id',(req,res,next)=>{
   Perfume.findOne({'_id':req.params.id},(err,datos)=>{
