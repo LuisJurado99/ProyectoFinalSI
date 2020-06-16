@@ -49,6 +49,7 @@ router.post('/agregar',(req,res,next)=>{
     cantidad: req.body.cantidad,
     precio: req.body.precio,
     tipo: req.body.tipo,
+    foto: req.body.foto
   });
   console.log(req.body);
   
