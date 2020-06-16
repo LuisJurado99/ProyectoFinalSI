@@ -54,7 +54,8 @@ router.post('/agregar',(req,res,next)=>{
   
   perfume.save((err,datos)=>{
     if(err) res.render('error',{message: err});
-    else res.status(201).json(datos);
+    else res.status(201).render("buscar",{datos:req.body});
+
   });
 
 });
