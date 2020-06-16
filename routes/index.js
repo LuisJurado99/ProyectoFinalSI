@@ -107,6 +107,18 @@ router.get('/eliminar',(req,res,next)=>{
   });    
       
 });
+router.get('/modificar/:id',(req,res,next)=>{
+  console.log(req.params.id);
+  
+  Perfume.findOne({'_id':req.params.id},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    }
+    else  {
+        res.render('buscar',{title:'buscar',datos:datos});
+      }
+  });
+});
 router.post('/buscar',(req,res,next)=>{
   
   Perfume.findOne({'nombre':req.body.buscar},(err,datos)=>{
