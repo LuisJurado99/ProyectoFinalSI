@@ -53,6 +53,13 @@ router.get('/informar',(req,res,next)=>{
   res.render('acercade',{title: "Information"})
 });
 
+router.get('/insertar',(req,res,next)=>{
+  res.render('alta',{title: "Insertar nuevo"})
+});
+
+router.get('/modificar',(req,res,next)=>{
+  res.render('modificacion',{title: "Modificación de datos"})
+});
 
 router.get('/documentar',(req,res,next)=>{
   res.render('documentacion',{title: "Documentation"})
