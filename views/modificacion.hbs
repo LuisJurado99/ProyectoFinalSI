@@ -4,6 +4,11 @@
 <h1>Datos del elemento que desea modificar</h1>
 <br>
 <br>
+<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    {{#each list }}
+      <a class="dropdown-item" href="#">{{_id}}</a>  
+    {{/each}}
+  </div>
 <form action="/grabar" method="POST">
     <div class="form-group">
     <label for="nombre">Nombre:</label>

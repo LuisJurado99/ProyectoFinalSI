@@ -58,7 +58,12 @@ router.get('/insertar',(req,res,next)=>{
 });
 
 router.get('/modificar',(req,res,next)=>{
-  res.render('modificacion',{title: "Modificación de datos"})
+  Perfume.find( {} , (err,datos)=>{
+    if(err) res.status(400).json({mensaje:"Error de Api"})
+    else res.render('modificacion',{title: "Modificación de datos", datos:datos})
+  });
+  
+  
 });
 
 router.get('/documentar',(req,res,next)=>{
