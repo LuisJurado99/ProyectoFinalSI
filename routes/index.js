@@ -68,6 +68,10 @@ router.get('/insertar',(req,res,next)=>{
   res.render('alta',{title: "Insertar nuevo"})
 });
 
+router.get('/eliminar/:id',(req,res,next)=>{
+  res.render('eliminacion',{title: "Eliminar", id:req.params.id})
+});
+
 router.get('/modificar',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
