@@ -25,7 +25,7 @@ router.patch('/actualizar/:perfumeId', (req,res,next)=>{
     else res.status(200).json(datos)
   });
 });
-router.get('/modificar/:perfumeId', (req,res,next)=>{
+router.post('/modificar/:perfumeId', (req,res,next)=>{
   console.log(req.body);
     Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
       if(err) res.status(400).json({mensaje:"Error de Api"})
