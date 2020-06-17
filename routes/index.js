@@ -29,7 +29,7 @@ router.post('/modificar/:perfumeId', (req,res,next)=>{
   console.log(req.body);
     Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
       if(err) res.status(400).json({mensaje:"Error de Api"})
-      else  res.render('operacion',datos);
+      else  res.render('operacion',req.body);
     });
   });
 
