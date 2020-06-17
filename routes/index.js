@@ -29,7 +29,7 @@ router.post('/modificar/:perfumeId', (req,res,next)=>{
   console.log(req.body);
     Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
       if(err) res.status(400).json({mensaje:"Error de Api"})
-      else res.status(200).json(datos)
+      else  res.render('operacion',datos);
     });
   });
 
@@ -143,7 +143,7 @@ router.get('/modificar/:id',(req,res,next)=>{
     }
     else  {
       console.log(datos);
-        res.render('modificacion_id',{title:'Modificar',datos:datos,id:req.params.id});
+        res.render('modificacion_id',datos);
       }
   });
 });

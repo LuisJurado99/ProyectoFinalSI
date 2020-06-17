@@ -1,38 +1,39 @@
 <form action="/modificar/{{id}}" method="POST">
     <div class="form-group">
     <label for="nombre">Nombre: </label>
-      <input type="text" class="form-control" id="nombre"
-              placeholder="nombre" name="nombre">
+    <input type="text" class="form-control" id="nombre" 
+            placeholder="Nombre" value="{{nombre}}" name="nombre">
+   
     </div>
     <div class="form-group">
       <label for="marca">Marca:</label>
       <input type="text" class="form-control" id="marca"
-              placeholder="Marca del Perfume" name="marca">
+              placeholder="Marca del Perfume" value="{{marca}}" name="marca">
     </div>
     <div class="form-group">
       <label for="aroma">Aroma:</label>
       <input type="text" class="form-control" id="aroma"
-              placeholder="Aroma del Perfume" name="aroma">
+              placeholder="Aroma del Perfume" value="{{aroma}}" name="aroma">
     </div>
     <div class="form-group">
       <label for="cantidad">Cantidad:</label>
       <input type="number" class="form-control" id="cantidad"
-              placeholder="Cantidad del Perfume" name="cantidad">
+              placeholder="Cantidad del Perfume" value="{{cantidad}}" name="cantidad">
     </div>
     <div class="form-group">
       <label for="precio">Precio:</label>
       <input type="number" class="form-control" id="precio"
-              placeholder="Precio del Perfume" name="precio">
+              placeholder="Precio del Perfume" value="{{precio}}" name="precio">
     </div>
     <div class="form-group">
       <label for="tipo">Tipo:</label>
       <input type="text" class="form-control" id="tipo"
-              placeholder="Tipo del Perfume" name="tipo">
+              placeholder="Tipo del Perfume" value="{{tipo}}" name="tipo">
     </div>
     <div class="form-group">
       <label for="foto">Foto:</label>
       <input type="text" class="form-control" id="foto"
-              placeholder="Foto del Perfume" name="foto">
+              placeholder="Foto del Perfume" value="{{foto}}" name="foto">
     </div>
     <button type="submit" class="btn btn-primary">Modificar</button>
 </form>
