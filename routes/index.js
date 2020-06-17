@@ -46,8 +46,12 @@ router.post('/agregar',(req,res,next)=>{
   console.log(req.body);
   
   perfume.save((err,datos)=>{
-    if(err) res.render('error',{message: err});
-    else res.status(201).render("buscar",{datos:req.body});
+    if(err) {
+      res.render('error',{message: err});
+    }
+    else {
+      res.render('operacion',datos);
+    }
 
   });
 
@@ -113,7 +117,7 @@ router.get('/borrar/:id',(req,res,next)=>{
     }
     else{
       
-      res.render('operacion')
+      res.render('operacion', datos);
     }
   });
   
