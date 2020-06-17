@@ -8,6 +8,14 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+var mongoose = require('mongoose');
+var uri = 'mongodb+srv://root:root@cluster0-qksmw.gcp.mongodb.net/perfume?retryWrites=true&w=majority';
+mongoose.connect(uri, {
+  useNewUrlParser: true
+}).then(() => {
+  console.log('Conectado a Mongo DB Atlas')
+}).catch(err => console.log(err));
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
