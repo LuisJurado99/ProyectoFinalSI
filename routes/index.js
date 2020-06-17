@@ -112,7 +112,8 @@ router.get('/borrar/:id',(req,res,next)=>{
       res.render('error',{title:'error'});
     }
     else{
-      res.status(200).json(datos)
+      
+      res.render('operacion')
     }
   });
   
