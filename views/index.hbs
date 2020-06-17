@@ -13,30 +13,8 @@
                     <!-- Button trigger modal -->
                     <a class="btn btn-primary" href="/modificar/{{_id}}" role="button">Modificar</a>
                     <!-- Button trigger modal -->
-                    <a class="btn btn-danger" href="#modal1" role="button" data-toggle="modal"> Eliminar </a>
-                    <div class="modal fade" id="modal1">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h3 class="modal-tittle"> Confirmación </h3>
-                                    <button tyle="button" class="close" data-dismiss="modal" aria-hidden="true"> &times;
-                                    </button>
-                                    
-                                </div>
-                                <div class="modal-body">
-                                    <p>¿Está seguro de eliminar el elemento {{nombre}}?</p>
-                                </div>
-                                <div class="modal-footer">
-                                    <a class="btn btn-danger" href="/eliminar/{{_id}}" role="button"
-                                        data-toggle="modal1">Eliminar</a>
-                                    <button type="button" class="btn btn-secondary"
-                                        data-dismiss="modal">Cancelar</button>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
+                    <a class="btn btn-danger" href="/eliminar/{{_id}}"  role="button" > Eliminar </a>
+                                        
                 </div>
             </div>
         </div>

@@ -61,6 +61,22 @@ router.get('/insertar',(req,res,next)=>{
   res.render('alta',{title: "Insertar nuevo"})
 });
 
+router.get('/eliminar/:id',(req,res,next)=>{
+  Perfume.findOne({'_id':req.params.id},(err,datos)=>{
+   console.log(datos);
+   
+    if(err){
+      res.render('error',{title:'error'});
+    }
+    else  {
+      console.log(datos);
+      res.render('eliminacion',{title: "Eliminar elemento", id: req.params.id , datos:datos});
+      }
+  });
+});
+  
+
+
 
 router.get('/modificar',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
@@ -103,6 +119,7 @@ router.post('/eliminar/:id',(req,res,next)=>{
   });    
 });*/
 //PRUEBA!!!!!!!!!
+/*
 router.get('/eliminar/:id',(req,res,next)=>{
   Perfume.findOneAndDelete({'_id':req.params.id},(err,datos)=>{
     if(err){
@@ -114,6 +131,7 @@ router.get('/eliminar/:id',(req,res,next)=>{
     }
   }); 
 });
+*/
 router.get('/modificar/:id',(req,res,next)=>{
   Perfume.findOne({'_id':req.params.id},(err,datos)=>{
     if(err){
