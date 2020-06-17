@@ -30,6 +30,7 @@ router.post('/modificar/:perfumeId', (req,res,next)=>{
     Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
       if(err) res.status(400).json({mensaje:"Error de Api"})
       else  res.render('operacion',req.body);
+
     });
   });
 
@@ -143,7 +144,7 @@ router.get('/modificar/:id',(req,res,next)=>{
     }
     else  {
       console.log(datos);
-        res.render('modificacion_id',datos);
+        res.render('modificacion_id',{title:'Modificar',datos:datos,id:req.params.id});
       }
   });
 });
