@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<h1>Datos del elemento que desea modificar</h1>
+<br>
+<br>
+
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Selecionar ID 
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+  <form action="/modificar" method="POST" name="selecionar_id">
+  {{#each datos }}
+    <a class="dropdown-item" href="/modificar/{{id}}" >{{_id}} || {{nombre}}</a>
+  {{/each}}
+  </form>
+  </div>
+</div>

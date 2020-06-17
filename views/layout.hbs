@@ -2,7 +2,20 @@
 <html>
 
 <head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" 
+integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" 
+crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" 
+integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" 
+crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" 
+integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" 
+crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" >
@@ -15,8 +28,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
     integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
     crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <title>{{title}}</title>
 
@@ -31,6 +42,10 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
+        <li>
+          <a class="nav-link" href="/insertar"> Agregar </a>
+        </li>
+
         <li class="nav-item active">
           <a class="nav-link" href="/informar">Acerca de</a>
         </li>
@@ -52,44 +67,46 @@
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
         <div class="footer-pad">
-          <h4>Heading 1</h4>
+          <h4>César Fonseca</h4>
           <ul class="list-unstyled">
-            <li><a href="#">Website Tutorial</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Disclaimer</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Webmaster</a></li>
+            <p>Carrera: Ingeniería en Computación</p>
+            <p>Semestre: Sexto</p>
+            <p><li><a href="https://github.com/cfonseca2"> Cuenta GitHub </a></li></p>
+            <p>Correo:  cesarfonseca67@aragon.unam.mx  </p>
+            
           </ul>
         </div>
       </div>
       <div class="col-md-3 col-sm-6">
         <!--Column1-->
         <div class="footer-pad">
-          <h4>Heading 3</h4>
+          <h4>Luis Jurado</h4>                           
           <ul class="list-unstyled">
-            <li><a href="#">Parks and Recreation</a></li>
-            <li><a href="#">Public Works</a></li>
-            <li><a href="#">Police Department</a></li>
-            <li><a href="#">Fire</a></li>
-            <li><a href="#">Mayor and City Council</a></li>
+            <p>Carrera: Ingeniería en Computación</p>
+            <p>Semestre: Sexto</p>
+            <p><li><a href="https://github.com/LuisJurado99/"> Cuenta GitHub </a></li></p>
+            <p>Correo: albertojurado19@aragon.unam.mx </p>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6">
+        <!--Column1-->
+        <div class="footer-pad">
+          <h4>Lucero Leyva</h4>
+          <ul class="list-unstyled">
+            <p>Carrera: Ingeniería en Computación</p>
+            <p>Semestre: Octavo</p>
+            <p><li><a href="https://github.com/LuceroCortes"> Cuenta GitHub </a></li></p>
+            <p>Correo: lucerocortes79@aragon.unam.mx</p>
             <li>
               <a href="#"></a>
             </li>
           </ul>
         </div>
-      </div>
-    	<div class="col-md-3">
-    		<h4>Follow Us</h4>
-            <ul class="social-network social-circle">
-             <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-             <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-            </ul>				
-		</div>
     </div>
 	<div class="row">
 		<div class="col-md-12 copy">
-			<p class="text-center">&copy; Copyright 2018 - Company Name.  All rights reserved.</p>
+			<p class="text-center">&copy; Junio 2020 - Proyecto Final Sistemas de Información - Equipo Tecjol</p>
 		</div>
 	</div>
 

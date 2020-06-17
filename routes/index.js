@@ -20,14 +20,18 @@ router.get('/apiPerfume',(req,res,next)=>{
 });
 
 router.patch('/actualizar/:perfumeId', (req,res,next)=>{
-  console.log(req.body);
-  console.log(req.params.perfumeId);
-  
   Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
     if(err) res.status(400).json({mensaje:"Error de Api"})
     else res.status(200).json(datos)
   });
 });
+router.post('/modificar/:perfumeId', (req,res,next)=>{
+  console.log(req.body);
+    Perfume.findOneAndUpdate( {'_id':req.params.perfumeId },{$set:req.body}, (err,datos)=>{
+      if(err) res.status(400).json({mensaje:"Error de Api"})
+      else res.status(200).json(datos)
+    });
+  });
 
 router.post('/agregar',(req,res,next)=>{
   var perfume=Perfume({
@@ -37,12 +41,18 @@ router.post('/agregar',(req,res,next)=>{
     cantidad: req.body.cantidad,
     precio: req.body.precio,
     tipo: req.body.tipo,
+    foto: req.body.foto
   });
   console.log(req.body);
   
   perfume.save((err,datos)=>{
-    if(err) res.render('error',{message: err});
-    else res.status(201).json(datos);
+    if(err) {
+      res.render('error',{message: err});
+    }
+    else {
+      res.render('operacion',datos);
+    }
+
   });
 
 });
@@ -51,6 +61,33 @@ router.get('/informar',(req,res,next)=>{
   res.render('acercade',{title: "Information"})
 });
 
+router.get('/insertar',(req,res,next)=>{
+  res.render('alta',{title: "Insertar nuevo"})
+});
+
+router.get('/eliminar/:id',(req,res,next)=>{
+  Perfume.findOne({'_id':req.params.id},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    }
+    else  {
+      console.log(datos);
+      res.render('eliminacion',datos);
+      }
+  });
+});
+  
+
+
+
+router.get('/modificar',(req,res,next)=>{
+  Perfume.find( {} , (err,datos)=>{
+    if(err) res.status(400).json({mensaje:"Error de Api"})
+    else res.render('modificacion',{title: "Modificación de datos", datos:datos})
+  });
+  
+  
+});
 
 router.get('/documentar',(req,res,next)=>{
   res.render('documentacion',{title: "Documentation"})
@@ -67,11 +104,49 @@ router.delete('/borrar/:perfumeId',(req,res,next)=>{
       res.status(404).json(err);
     }
     else  {
-      res.status(200).json(datos);
+      console.log(datos);
     }
   });
+  
 });
 
+router.get('/borrar/:id',(req,res,next)=>{
+  Perfume.findOneAndDelete({'_id':req.params.id},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    }
+    else{
+      
+      res.render('operacion', datos);
+    }
+  });
+  
+});
+//PRUEBA!!!!!!!!!
+/*
+router.get('/eliminar/:id',(req,res,next)=>{
+  Perfume.findOneAndDelete({'_id':req.params.id},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    }
+    else{
+      console.log(datos);
+      res.render('buscar',{id:req.params.id, datos:datos})
+    }
+  }); 
+});
+*/
+router.get('/modificar/:id',(req,res,next)=>{
+  Perfume.findOne({'_id':req.params.id},(err,datos)=>{
+    if(err){
+      res.render('error',{title:'error'});
+    }
+    else  {
+      console.log(datos);
+        res.render('modificacion_id',{title:'Modificar',datos:datos,id:req.params.id});
+      }
+  });
+});
 router.post('/buscar',(req,res,next)=>{
   
   Perfume.findOne({'nombre':req.body.buscar},(err,datos)=>{
