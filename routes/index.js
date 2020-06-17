@@ -144,7 +144,7 @@ router.get('/modificar/:id',(req,res,next)=>{
     }
     else  {
       console.log(datos);
-        res.render('modificacion_id',{title:'Modificar',datos:datos,id:req.params.id});
+        res.render('modificacion_id',datos);
       }
   });
 });
