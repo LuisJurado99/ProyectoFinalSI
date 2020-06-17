@@ -1,23 +1,40 @@
-{{#each}}
 <h3>¿Estás seguro que deseas eliminar el elemento {{nombre}} ?</h3>
 <br>
-<div class="col col-3 m-5">
-    <div class="card" style="width:400px;">
-        <div style="text-align: center;">
-            <img class="card-img-top" src="{{foto}}" alt="Card image" style="width: 350px; height: 400px;">
-            <div class="card-body">
-                <h4 class="card-title"><a href="{{foto}}">{{nombre}} </a> </h4>
-                <p class="card-text">{{marca}}</p>
-                <p class="card-text">$ {{precio}}</p>
-                <p class="card-text">{{tipo}}</p>
-                <p class="card-text">{{cantidad}} ml </p>
-                <!-- Button trigger modal -->
-                <a class="btn btn-danger" href="/eliminar/{{_id}}" role="button">Eliminar</a>
-                <!-- Button trigger modal -->
-                <a class="btn btn-primary" href="/" role="button"> Cancelar </a>
-
+<div class="card" style="width: 18rem;">
+    <img src="{{foto}}" class="card-img-top">
+    <div class="card-body">
+        <h5 class="card-title">{{nombre}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{marca}}</li>
+        <li class="list-group-item">{{cantidad}}</li>
+    </ul>
+    <div class="card-body">
+        <a class="btn btn-primary" href="/" role="button">Regresar</a>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+            Eliminar
+        </button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Eliminar {{nombre}}</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        ¿Seguro qué deseas eliminar {{nombre}}?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <a class="btn btn-danger" href="/borrar/{{_id}}" role="button">Eliminar</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-{{/each}}

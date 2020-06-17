@@ -63,14 +63,12 @@ router.get('/insertar',(req,res,next)=>{
 
 router.get('/eliminar/:id',(req,res,next)=>{
   Perfume.findOne({'_id':req.params.id},(err,datos)=>{
-   console.log(datos);
-   
     if(err){
       res.render('error',{title:'error'});
     }
     else  {
       console.log(datos);
-      res.render('eliminacion',{title: "Eliminar elemento", id: req.params.id , datos:datos});
+      res.render('eliminacion',datos);
       }
   });
 });
@@ -102,22 +100,23 @@ router.delete('/borrar/:perfumeId',(req,res,next)=>{
       res.status(404).json(err);
     }
     else  {
-      res.status(200).json(datos);
+      console.log(datos);
     }
   });
+  
 });
-/*
-router.post('/eliminar/:id',(req,res,next)=>{
+
+router.get('/borrar/:id',(req,res,next)=>{
   Perfume.findOneAndDelete({'_id':req.params.id},(err,datos)=>{
     if(err){
       res.render('error',{title:'error'});
     }
     else{
-      console.log(datos);
-      res.status(200).json(datos);
+      res.status(200).json(datos)
     }
-  });    
-});*/
+  });
+  
+});
 //PRUEBA!!!!!!!!!
 /*
 router.get('/eliminar/:id',(req,res,next)=>{
