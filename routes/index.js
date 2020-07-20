@@ -13,6 +13,12 @@ router.get('/', function(req, res, next) {
   
 });
 
+router.get('/apiPerfume/:perfumeId',(req,res,next)=>{
+  Perfume.findone( {'_id':req.params.perfumeId} , (err,datos)=>{
+    res.status(200).json(datos);
+  });
+});
+
 router.get('/apiPerfume',(req,res,next)=>{
   Perfume.find( {} , (err,datos)=>{
     res.status(200).json(datos);
